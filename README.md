@@ -13,16 +13,20 @@ Docker image with mongo-connector installed. The image is built based on [Python
 
 ## Usage
 
-### In Dockerfile
+There are 2 ways to use this docker
+
+#### In Dockerfile
 
 ```dockerfile
 FROM weflex/mongo-connector:latest
 ```
 
-#### Local Run
+By default, the running container will connect:
 
-By default, the running container will connect mongo node specified by `$MONGO`, `$MONGO_USERNAME` and
-`$MONGO_PASSWORD` and the elasticsearch node specified by the elasticsearch host.
+- mongo specified by `$MONGO`, `$MONGO_USERNAME` and `$MONGO_PASSWORD`
+- elasticsearch specified by the host `elasticsearch`
+
+Or directly run:
 
 ```sh
 $ docker run -d --env=MONGO=localhost --link=elasticsearch:elasticsearch weflex/mongo-connector
