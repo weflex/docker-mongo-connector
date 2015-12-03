@@ -1,7 +1,7 @@
 #This will prepare a elasticsearch node with mongo-connector enabled
 
 FROM python:3.4.3
-MAINTAINER yeasy@github
+MAINTAINER yorkie@github
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV TZ Asia/Shanghai
@@ -16,7 +16,5 @@ RUN chmod a+x /usr/bin/mongo
 
 VOLUME /data
 
-
 # Sample usage when no commands is given outside
 CMD ["/bin/bash", "/tmp/startup.sh"]
-
