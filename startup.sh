@@ -29,13 +29,13 @@ do
     break
   fi
 done
-
 sleep 1
 
 mongo="${MONGO:-mongo}"
 elasticsearch="${ELASTICSEARCH:-elasticsearch}"
 
 mongo-connector --auto-commit-interval=0 \
+  --continue-on-error
   --oplog-ts=/data/oplog.ts \
   --main ${mongo}:27017 \
   --target-url ${elasticsearch}:9200 \
