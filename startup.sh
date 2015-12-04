@@ -8,19 +8,15 @@ check_mongo() {
   rm -f ismaster
 }
 
-log() {
-  echo " \033[36m$1\033[0m : \033[90m$2\033[0m"
-}
-
 next() {
-  log "warn" "waiting for mongod node to assume primary status..."
+  echo "waiting for mongod node to assume primary status..."
   sleep 2
   check_mongo
 }
 
 finish() {
-  log "info" "connected to primary"
-  log "info" "start running mongo-connector"
+  echo "connected to primary"
+  echo "start running mongo-connector"
 }
 
 while true
